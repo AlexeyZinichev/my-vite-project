@@ -2,6 +2,7 @@
 import React from 'react';
 import ShopItemFunc from './components/ShopItemFunc';
 import ShopItemClass from './components/ShopItemClass';
+import Calendar from './components/Calendar/Calendar';
 
 const item = {
   brand: 'Tiger of Sweden',
@@ -18,9 +19,9 @@ function App() {
       <div className="background-element"></div>
       <div className="highlight-window">
         <div className="highlight-overlay"></div>
-      </div>
-      <div className="window">
-        <ShopItemFunc item={item} />
+      <div style={{ display: 'flex' }}>
+        <div className="window"><ShopItemFunc item={item} /></div>
+        <div className="window"><Calendar date={now} /></div> 
       </div>
     </div>
   );
