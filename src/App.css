@@ -1,1 +1,130 @@
+/* src/App.css */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  box-sizing: border-box;
+}
 
+.background-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f5f5f5;
+  z-index: -1;
+}
+
+.highlight-window {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.highlight-window .highlight-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.window {
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+h2 {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+h3 {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+.highlight-window.mobile {
+  display: none;
+}
+
+.divider {
+  height: 1px;
+  background: #ddd;
+  margin: 16px 0;
+}
+
+.purchase-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+}
+
+button {
+  padding: 10px 20px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background: #333;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .highlight-window {
+    display: none;
+  }
+  .highlight-window.mobile {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin: 16px 0;
+  }
+  .highlight-window.mobile .highlight-overlay {
+    background: rgba(255, 255, 255, 0.6);
+  }
+}
