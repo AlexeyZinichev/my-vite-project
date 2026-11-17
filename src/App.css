@@ -112,6 +112,18 @@ button:hover {
   background: #333;
 }
 
+/* Контейнер для горизонтального расположения карточки и календаря */
+.flex-row {
+  display: flex;
+  gap: 20px;               /* Отступ между блоками */
+  align-items: stretch;    /* Чтобы оба блока были одинаковой высоты */
+}
+
+/* Оба блока займут равную ширину */
+.flex-row > .window {
+  flex: 1;
+}
+
 /* Адаптив */
 @media (max-width: 768px) {
   .highlight-window {
