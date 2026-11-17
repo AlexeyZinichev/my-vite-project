@@ -3,6 +3,7 @@ import React from 'react';
 import ShopItemFunc from './components/ShopItemFunc';
 import ShopItemClass from './components/ShopItemClass';
 import Calendar from './components/Calendar/Calendar';
+import './App.css'; // Убедись, что импорт есть (обычно он уже есть)
 
 const item = {
   brand: 'Tiger of Sweden',
@@ -13,15 +14,27 @@ const item = {
   currency: '£'
 };
 
+const now = new Date(2017, 2, 8); // Март 2017 года
+
 function App() {
   return (
     <div className="container">
       <div className="background-element"></div>
       <div className="highlight-window">
         <div className="highlight-overlay"></div>
-      <div style={{ display: 'flex' }}>
-        <div className="window"><ShopItemFunc item={item} /></div>
-        <div className="window"><Calendar date={now} /></div> 
+      </div>
+
+      {/* Контейнер с новым классом */}
+      <div className="flex-row">
+        {/* Карточка товара */}
+        <div className="window">
+          <ShopItemFunc item={item} />
+        </div>
+
+        {/* Календарь */}
+        <div className="window">
+          <Calendar date={now} />
+        </div>
       </div>
     </div>
   );
